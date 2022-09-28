@@ -1,0 +1,74 @@
+﻿@model IEnumerable<FLightBookingSystem.DatabaseLayer.Flight>
+
+@{
+    ViewBag.Title = "SearchResult";
+    Layout = "~/Views/Shared/_CustomerLayout.cshtml";
+}
+
+<h2>Availabe Flight</h2>
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FlightName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FromCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ToCity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DeptTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EndTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalSeat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Discount)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FlightName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeptTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Discount)
+            </td>
+            <td>
+                @Html.ActionLink("Book", "Confrim", new { id = item.FlightID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.FlightID }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.FlightID })*@
+            </td>
+        </tr>
+    }
+
+</table>

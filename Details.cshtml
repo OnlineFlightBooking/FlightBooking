@@ -1,4 +1,4 @@
-﻿@model FLightBookingSystem.DatabaseLayer.Booking
+﻿@model FLightBookingSystem.DatabaseLayer.Flight
 
 @{
     ViewBag.Title = "Details";
@@ -8,23 +8,23 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Booking</h4>
+    <h4>Flight</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.BookingDate)
+            @Html.DisplayNameFor(model => model.FlightName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BookingDate)
+            @Html.DisplayFor(model => model.FlightName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.FromCIty)
+            @Html.DisplayNameFor(model => model.FromCity)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.FromCIty)
+            @Html.DisplayFor(model => model.FromCity)
         </dd>
 
         <dt>
@@ -44,19 +44,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Status)
+            @Html.DisplayNameFor(model => model.DeptTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Status)
+            @Html.DisplayFor(model => model.DeptTime)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PaymentStatus)
+            @Html.DisplayNameFor(model => model.EndTime)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.PaymentStatus)
+            @Html.DisplayFor(model => model.EndTime)
         </dd>
 
         <dt>
@@ -68,24 +68,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Customer.Name)
+            @Html.DisplayNameFor(model => model.Discount)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Customer.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Flight.FlightName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Flight.FlightName)
+            @Html.DisplayFor(model => model.Discount)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.BookingID }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.FlightID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
